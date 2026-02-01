@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fact Hub | Fake News Detection</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">FH</div>
+      <div>
+        <div class="brand-name">Fact Hub</div>
+        <div class="brand-tag">Fake news detection app + extension</div>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn ghost" onclick="showLogin('login')">Log in</button>
+      <button class="btn primary" onclick="showLogin('signup')">Sign up</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Stop fake news before it spreads.</h1>
+        <p class="sub">
+          Fact Hub helps you verify claims on webpages, in apps, and across social feeds—fast.
+          Use our browser extension or mobile app to check credibility and get citations.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn primary" onclick="showLogin('signup')">Get started</button>
+          <button class="btn" onclick="scrollToSection('how')">See how it works</button>
+        </div>
+
+        <div class="trust">
+          <div class="pill">⚡ Real-time checks</div>
+          <div class="pill">🔍 Evidence-based summaries</div>
+          <div class="pill">🧩 Chrome extension</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- "Product image" as a simple mock -->
+        <div class="product-card">
+          <div class="pc-top">
+            <div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div>
+            <span class="pc-title">Fact Hub Extension</span>
+          </div>
+          <div class="pc-body">
+            <div class="scan-row">
+              <div class="scan-label">Scanning page...</div>
+              <div class="scan-status ok">Verified</div>
+            </div>
+            <div class="meter">
+              <div class="bar" style="width: 78%"></div>
+            </div>
+            <div class="pc-small">Confidence score: <b>78%</b></div>
+
+            <div class="evidence">
+              <div class="ev-title">Top evidence</div>
+              <div class="ev-item">• Source cross-check from reputable outlets</div>
+              <div class="ev-item">• Claim consistency in known fact databases</div>
+              <div class="ev-item">• Highlighted mismatched context</div>
+            </div>
+
+            <div class="pc-cta">
+              <button class="btn small" onclick="showLogin('signup')">Install extension</button>
+              <button class="btn small ghost" onclick="showLogin('signup')">Download app</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-cards">
+          <div class="mini">
+            <div class="mini-icon">🧠</div>
+            <div>
+              <div class="mini-title">AI + validation</div>
+              <div class="mini-text">Checks AI-generated and human content.</div>
+            </div>
+          </div>
+          <div class="mini">
+            <div class="mini-icon">📌</div>
+            <div>
+              <div class="mini-title">Citations</div>
+              <div class="mini-text">Shows why something is flagged.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <h2>Key features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Search & verify</h3>
+          <p>Paste a link or highlight text to verify claims and get an evidence summary.</p>
+        </div>
+        <div class="card">
+          <h3>Browser extension</h3>
+          <p>Detect misinformation directly on the page while you browse.</p>
+        </div>
+        <div class="card">
+          <h3>Mobile app</h3>
+          <p>Fact-check content shared in chats and social apps on the go.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>Capture content</b> (link, highlight, or screenshot).</li>
+        <li><b>Analyze</b> with credibility + consistency checks.</li>
+        <li><b>Explain</b> results with citations and context.</li>
+      </ol>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="section">
+      <h2>Reviews</h2>
+      <div class="grid">
+        <div class="card">
+          <p>“Helped me quickly verify viral claims during elections.”</p>
+          <div class="small">★★★★★</div>
+        </div>
+        <div class="card">
+          <p>“The citations are the best part — you can actually see evidence.”</p>
+          <div class="small">★★★★★</div>
+        </div>
+        <div class="card">
+          <p>“Love that it works as an extension. Super fast.”</p>
+          <div class="small">★★★★☆</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>©️ 2026 Fact Hub</div>
+      <div class="footer-links">
+        <a href="#" onclick="showLogin('login'); return false;">Log in</a>
+        <a href="#" onclick="showLogin('signup'); return false;">Sign up</a>
+        <a href="#">Contact</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Login/Signup Modal -->
+  <div id="authModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" onclick="closeAuth()"></div>
+
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div id="authTitle" class="modal-title">Welcome</div>
+          <div class="modal-sub">Continue to Fact Hub</div>
+        </div>
+        <button class="x" onclick="closeAuth()" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="oauth">
+          <button class="btn oauth-btn" onclick="dummyOAuth('google')">
+            <span class="oauth-icon">G</span>
+            Continue with Google
+          </button>
+          <button class="btn oauth-btn" onclick="dummyOAuth('apple')">
+            <span class="oauth-icon"></span>
+            Continue with Apple
+          </button>
+        </div>
+
+        <div class="divider"><span>or</span></div>
+
+        <form id="authForm" onsubmit="handleAuthSubmit(event)">
+          <label>Email</label>
+          <input id="email" type="email" placeholder="you@cmu.edu" required />
+
+          <label>Password</label>
+          <input id="password" type="password" placeholder="••••••••" required />
+
+          <button id="authSubmitBtn" class="btn primary full" type="submit">Continue</button>
+        </form>
+
+        <div class="switch">
+          <span id="switchText">Don’t have an account?</span>
+          <a href="#" id="switchLink" onclick="toggleAuthMode(); return false;">Sign up</a>
+        </div>
+
+        <div id="authMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
