@@ -236,3 +236,127 @@ input:focus{ border-color: rgba(110,168,254,.55); }
   .grid{ grid-template-columns:1fr; }
   .nav-links{ display:none; }
 }
+
+.hidden { display: none !important; }
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px;
+  transition: transform 0.2s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-card.featured {
+  border-color: var(--accent);
+  background: rgba(110, 168, 254, 0.08);
+  position: relative;
+}
+
+.price-card.featured::before {
+  content: "RECOMMENDED";
+  position: absolute;
+  top: -12px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 10px;
+  font-weight: 900;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.price {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 16px 0;
+}
+
+.price span {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.price-list li::before {
+  content: "✓";
+  color: var(--ok);
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* Ensure centering for the sub-text in pricing */
+center h1 { margin-bottom: 8px; }
+center { margin-bottom: 40px; }
+
+/* --- User Profile (Logged In State) --- */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 4px 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  animation: fadeIn 0.3s ease;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #081126;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+/* --- Subscription Button States --- */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* --- Utilities & Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure the Pricing sub-header looks clean */
+#subscription-page h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+#subscription-page .sub {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* Pricing popular badge refinement */
+.price-card.featured::before {
+  content: "POPULAR"; /* Updated to match vibecoded look */
+  letter-spacing: 0.5px;
+}
+
