@@ -22,7 +22,7 @@
       <a href="#reviews" onclick="showPage('landing')">Reviews</a>
     </nav>
 
-    <div class="nav-actions" id="nav-actions">
+    <div class="nav-actions">
       <button class="btn ghost" onclick="showLogin('login')">Log in</button>
       <button class="btn primary" onclick="showLogin('signup')">Sign up</button>
     </div>
@@ -64,14 +64,12 @@
               <div class="bar" style="width: 78%"></div>
             </div>
             <div class="pc-small">Confidence score: <b>78%</b></div>
-
             <div class="evidence">
               <div class="ev-title">Top evidence</div>
               <div class="ev-item">• Source cross-check from reputable outlets</div>
               <div class="ev-item">• Claim consistency in known fact databases</div>
               <div class="ev-item">• Highlighted mismatched context</div>
             </div>
-
             <div class="pc-cta">
               <button class="btn small" onclick="showLogin('signup')">Install extension</button>
               <button class="btn small ghost" onclick="showLogin('signup')">Download app</button>
@@ -129,45 +127,42 @@
 
   <main id="subscription-page" class="container hidden">
     <section class="section">
-      <div style="text-align: center; margin-bottom: 40px;">
+      <div class="pricing-header">
         <h1>Choose your plan</h1>
-        <p class="sub">Upgrade to unlock advanced verification tools and deep-dive citations.</p>
+        <p class="sub">Upgrade to unlock advanced verification tools. Only one active plan allowed.</p>
       </div>
       
       <div class="grid">
-        <div class="card price-card">
+        <div class="card price-card" id="plan-free">
           <div class="pc-title">Free</div>
           <div class="price">$0<span>/mo</span></div>
           <ul class="price-list">
             <li>50 Verifications/mo</li>
             <li>Chrome Extension</li>
-            <li>Basic Evidence</li>
           </ul>
-          <button class="btn full" onclick="handleSubscribe('Free', this)">Current Plan</button>
+          <div class="plan-action"></div>
         </div>
 
-        <div class="card price-card featured">
+        <div class="card price-card featured" id="plan-pro">
           <div class="pc-title">Pro</div>
           <div class="price">$9<span>/mo</span></div>
           <ul class="price-list">
             <li>Unlimited Verifications</li>
             <li>Mobile App Access</li>
             <li>Deep Source Citations</li>
-            <li>AI Image Analysis</li>
           </ul>
-          <button class="btn primary full" onclick="handleSubscribe('Pro', this)">Upgrade to Pro</button>
+          <div class="plan-action"></div>
         </div>
 
-        <div class="card price-card">
+        <div class="card price-card" id="plan-team">
           <div class="pc-title">Team</div>
           <div class="price">$29<span>/mo</span></div>
           <ul class="price-list">
             <li>5 User Licenses</li>
             <li>Shared Fact Logs</li>
-            <li>API Access</li>
             <li>Priority Support</li>
           </ul>
-          <button class="btn full" onclick="handleSubscribe('Team', this)">Upgrade to Team</button>
+          <div class="plan-action"></div>
         </div>
       </div>
     </section>
@@ -178,10 +173,11 @@
     <div class="footer-links">
       <a href="#" onclick="showLogin('login'); return false;">Log in</a>
       <a href="#" onclick="showLogin('signup'); return false;">Sign up</a>
+      <a href="#">Contact</a>
     </div>
   </footer>
 
-  <div id="authModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div id="authModal" class="modal hidden">
     <div class="modal-backdrop" onclick="closeAuth()"></div>
     <div class="modal-card">
       <div class="modal-head">
@@ -189,19 +185,17 @@
           <div id="authTitle" class="modal-title">Welcome</div>
           <div class="modal-sub">Continue to Fact Hub</div>
         </div>
-        <button class="x" onclick="closeAuth()" aria-label="Close">✕</button>
+        <button class="x" onclick="closeAuth()">✕</button>
       </div>
-
       <div class="modal-body">
         <div class="oauth">
-          <button class="btn oauth-btn" onclick="dummyOAuth('google')">
-            <span class="oauth-icon">G</span> Continue with Google
-          </button>
+          <button class="btn oauth-btn" onclick="dummyOAuth('google')">G Continue with Google</button>
+          <button class="btn oauth-btn" onclick="dummyOAuth('apple')"> Continue with Apple</button>
         </div>
         <div class="divider"><span>or</span></div>
         <form id="authForm" onsubmit="handleAuthSubmit(event)">
           <label>Email</label>
-          <input id="email" type="email" placeholder="cool.boy@gmail.com" required />
+          <input id="email" type="email" placeholder="you@example.com" required />
           <label>Password</label>
           <input id="password" type="password" placeholder="••••••••" required />
           <button id="authSubmitBtn" class="btn primary full" type="submit">Continue</button>

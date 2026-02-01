@@ -360,3 +360,138 @@ button:disabled {
   letter-spacing: 0.5px;
 }
 
+/* --- Subscription & Utility Additions --- */
+
+/* Utility to toggle between Landing and Subscriptions */
+.hidden { 
+  display: none !important; 
+}
+
+/* Pricing Header spacing */
+.pricing-header { 
+  text-align: center; 
+  margin-bottom: 40px; 
+}
+
+/* Layout for Pricing Cards */
+.price-card { 
+  display: flex;
+  flex-direction: column;
+  min-height: 450px; /* Ensures all cards stay the same height */
+  transition: transform 0.3s ease, border-color 0.3s ease; 
+}
+
+.price-card:hover { 
+  transform: translateY(-5px); 
+  border-color: rgba(255, 255, 255, 0.2); 
+}
+
+/* Featured (Pro) Card styling */
+.price-card.featured { 
+  border-color: var(--accent); 
+  background: rgba(110, 168, 254, 0.05); 
+}
+
+/* Pricing Typography */
+.price { 
+  font-size: 36px; 
+  font-weight: 800; 
+  margin: 15px 0; 
+}
+
+.price span { 
+  font-size: 14px; 
+  color: var(--muted); 
+}
+
+/* Plan Features List */
+.price-list { 
+  list-style: none; 
+  padding: 0; 
+  margin: 0 0 25px 0; 
+  flex-grow: 1; /* Pushes the button/action area to the bottom */
+}
+
+.price-list li { 
+  margin-bottom: 10px; 
+  color: var(--muted); 
+  font-size: 14px; 
+}
+
+.price-list li::before { 
+  content: "✓"; 
+  color: var(--ok); 
+  margin-right: 8px; 
+  font-weight: bold;
+}
+
+/* Action Area & Active Status */
+.plan-action { 
+  margin-top: auto; 
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.active-badge {
+  background: rgba(50, 213, 131, 0.1); 
+  color: var(--ok);
+  border: 1px solid rgba(50, 213, 131, 0.2);
+  padding: 8px; 
+  border-radius: 8px; 
+  font-size: 12px;
+  font-weight: 700; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Cancel Button Styling */
+.cancel-btn { 
+  color: var(--muted); 
+  border-color: transparent; 
+  font-size: 12px;
+}
+
+.cancel-btn:hover { 
+  color: #ff6b6b !important; /* Soft Red */
+  background: rgba(255, 107, 107, 0.05) !important; 
+  border-color: rgba(255, 107, 107, 0.2) !important;
+}
+
+/* Profile UI in Nav */
+.profile-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.plan-tag {
+  font-size: 10px;
+  background: rgba(110, 168, 254, 0.1);
+  color: var(--accent);
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  border: 1px solid rgba(110, 168, 254, 0.2);
+}
+
+.profile-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.profile-icon:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.05);
+}
