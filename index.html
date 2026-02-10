@@ -209,6 +209,27 @@
     </div>
   </div>
 
+  <div id="verifyModal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeVerifyModal()"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Verify your email</div>
+          <div class="modal-sub">Required before activating a paid plan</div>
+        </div>
+        <button class="x" onclick="closeVerifyModal()">x</button>
+      </div>
+      <div class="modal-body">
+        <p id="verifyEmailText" class="small"></p>
+        <button class="btn full" onclick="sendVerificationCode()">Send verification code</button>
+        <label style="margin-top:10px;">Verification code</label>
+        <input id="verifyCodeInput" type="text" inputmode="numeric" placeholder="6-digit code" />
+        <button class="btn primary full" style="margin-top:10px;" onclick="verifyEmailCode()">Verify email</button>
+        <div id="verifyMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
