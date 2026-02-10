@@ -12,15 +12,23 @@ const EMAIL_VERIFY_TTL_MS = 10 * 60 * 1000; // demo: 10 min
 function showPage(pageId) {
   const landing = document.getElementById("landing-page");
   const subscriptions = document.getElementById("subscription-page");
+  const product = document.getElementById("product-page");
 
   if (pageId === "subscriptions") {
     landing.classList.add("hidden");
     subscriptions.classList.remove("hidden");
+    product.classList.add("hidden");
     renderSubscriptions();
+    window.scrollTo(0, 0);
+  } else if (pageId === "product") {
+    landing.classList.add("hidden");
+    subscriptions.classList.add("hidden");
+    product.classList.remove("hidden");
     window.scrollTo(0, 0);
   } else {
     landing.classList.remove("hidden");
     subscriptions.classList.add("hidden");
+    product.classList.add("hidden");
   }
 }
 
