@@ -33,8 +33,7 @@
       <div class="hero-left">
         <h1>Stop fake news before it spreads.</h1>
         <p class="sub">
-          Fact Hub helps you verify claims on webpages, in apps, and across social feeds—fast.
-          Use our browser extension or mobile app to check credibility and get citations.
+          Fact Hub helps you detect AI-generated content and verify claims in webpages, apps, and social feeds—fast. Use our browser extension or mobile app to analyze text, images, videos, and documents for credibility and citations.
         </p>
 
         <div class="hero-actions">
@@ -205,6 +204,47 @@
           <a href="#" id="switchLink" onclick="toggleAuthMode(); return false;">Sign up</a>
         </div>
         <div id="authMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="verifyModal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeVerifyModal()"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Verify your email</div>
+          <div class="modal-sub">Required before activating a paid plan</div>
+        </div>
+        <button class="x" onclick="closeVerifyModal()">x</button>
+      </div>
+      <div class="modal-body">
+        <p id="verifyEmailText" class="small"></p>
+        <button class="btn full" onclick="sendVerificationCode()">Send verification code</button>
+        <label style="margin-top:10px;">Verification code</label>
+        <input id="verifyCodeInput" type="text" inputmode="numeric" placeholder="6-digit code" />
+        <button class="btn primary full" style="margin-top:10px;" onclick="verifyEmailCode()">Verify email</button>
+        <div id="verifyMsg" class="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cancelModal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeCancelModal()"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Cancel subscription?</div>
+          <div class="modal-sub">Your plan will be switched back to Free.</div>
+        </div>
+        <button class="x" onclick="closeCancelModal()">x</button>
+      </div>
+      <div class="modal-body">
+        <p id="cancelPlanText" class="small"></p>
+        <div class="cancel-actions">
+          <button class="btn ghost full" onclick="closeCancelModal()">Keep Plan</button>
+          <button class="btn primary full" onclick="confirmCancelSubscription()">Yes, Cancel</button>
+        </div>
       </div>
     </div>
   </div>
