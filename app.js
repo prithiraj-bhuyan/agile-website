@@ -75,11 +75,22 @@ function subscribeToPlan(planId) {
 }
 
 function cancelSubscription() {
-  if (confirm("Cancel and return to Free?")) {
-    userState.activePlan = "free";
-    renderSubscriptions();
-    renderNav();
+  const planText = document.getElementById("cancelPlanText");
+  if (planText) {
+    planText.textContent = `Current plan: ${userState.activePlan.toUpperCase()}`;
   }
+  document.getElementById("cancelModal").classList.remove("hidden");
+}
+
+function closeCancelModal() {
+  document.getElementById("cancelModal").classList.add("hidden");
+}
+
+function confirmCancelSubscription() {
+  userState.activePlan = "free";
+  renderSubscriptions();
+  renderNav();
+  closeCancelModal();
 }
 
 // --- Auth ---

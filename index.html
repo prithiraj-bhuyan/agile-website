@@ -230,6 +230,26 @@
     </div>
   </div>
 
+  <div id="cancelModal" class="modal hidden">
+    <div class="modal-backdrop" onclick="closeCancelModal()"></div>
+    <div class="modal-card">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title">Cancel subscription?</div>
+          <div class="modal-sub">Your plan will be switched back to Free.</div>
+        </div>
+        <button class="x" onclick="closeCancelModal()">x</button>
+      </div>
+      <div class="modal-body">
+        <p id="cancelPlanText" class="small"></p>
+        <div class="cancel-actions">
+          <button class="btn ghost full" onclick="closeCancelModal()">Keep Plan</button>
+          <button class="btn primary full" onclick="confirmCancelSubscription()">Yes, Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
