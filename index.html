@@ -20,6 +20,8 @@
       <a href="#features" onclick="showPage('landing')">Features</a>
       <a href="#" onclick="showPage('subscriptions')">Pricing</a>
       <a href="#reviews" onclick="showPage('landing')">Reviews</a>
+      <a href="#" onclick="showPage('product')">Product</a>
+      <a href="#" onclick="showPage('profile')">Profile</a>
     </nav>
 
     <div class="nav-actions">
@@ -162,6 +164,151 @@
             <li>Priority Support</li>
           </ul>
           <div class="plan-action"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="product-page" class="container hidden">
+    <section class="section">
+      <div class="product-showcase">
+        <h1>Our Product</h1>
+        <p class="sub">Experience our advanced fake news detection technology in action. Try our live demo and see how it works.</p>
+        
+        <div class="product-demo-card">
+          <h2>Fake News Detector</h2>
+          <p>Our state-of-the-art AI-powered system helps you identify and verify the authenticity of news articles and content across the web.</p>
+          
+          <div class="product-features-list">
+            <div class="feature-item">
+              <span class="feature-icon">🤖</span>
+              <span>AI-Powered Analysis</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">⚡</span>
+              <span>Real-Time Detection</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🎯</span>
+              <span>High Accuracy</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔒</span>
+              <span>Secure & Private</span>
+            </div>
+          </div>
+          
+          <div class="product-cta">
+            <a href="https://deployment-fake-news-detector.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <button class="btn primary large">Try Live Demo →</button>
+            </a>
+            <p class="demo-note">No installation required • Opens in new tab</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <main id="profile-page" class="container hidden">
+    <section class="section">
+      <div class="profile-header">
+        <h1>My Profile</h1>
+        <p class="sub">Manage your account settings and preferences</p>
+      </div>
+
+      <div class="profile-grid">
+        <!-- Profile Info Card -->
+        <div class="card profile-info-card">
+          <div class="profile-avatar-large" id="profileAvatarLarge">
+            <span id="profileInitials">U</span>
+          </div>
+          <h3 id="profileDisplayName">User</h3>
+          <p class="profile-email" id="profileEmail">user@example.com</p>
+          <div class="profile-plan-badge" id="profilePlanBadge">FREE PLAN</div>
+        </div>
+
+        <!-- Account Details -->
+        <div class="card profile-section">
+          <h3 class="section-title">Account Information</h3>
+          <form id="profileForm" onsubmit="updateProfile(event)">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" id="fullName" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="emailInput" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label>Bio (Optional)</label>
+              <textarea id="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+            </div>
+            <button type="submit" class="btn primary full">Save Changes</button>
+          </form>
+        </div>
+
+        <!-- Subscription Details -->
+        <div class="card profile-section">
+          <h3 class="section-title">Subscription</h3>
+          <div class="subscription-info">
+            <div class="sub-detail">
+              <span class="sub-label">Current Plan</span>
+              <span class="sub-value" id="currentPlanDisplay">Free</span>
+            </div>
+            <div class="sub-detail">
+              <span class="sub-label">Verifications Used</span>
+              <span class="sub-value" id="verificationsUsed">12 / 50</span>
+            </div>
+            <div class="sub-detail">
+              <span class="sub-label">Member Since</span>
+              <span class="sub-value" id="memberSince">February 2026</span>
+            </div>
+          </div>
+          <button class="btn primary full" onclick="showPage('subscriptions')">Manage Subscription</button>
+        </div>
+
+        <!-- Preferences -->
+        <div class="card profile-section">
+          <h3 class="section-title">Preferences</h3>
+          <div class="preference-item">
+            <div>
+              <div class="pref-label">Email Notifications</div>
+              <div class="pref-desc">Receive updates about your verifications</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="emailNotifications" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preference-item">
+            <div>
+              <div class="pref-label">Browser Extension Auto-Check</div>
+              <div class="pref-desc">Automatically verify pages as you browse</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="autoCheck" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="preference-item">
+            <div>
+              <div class="pref-label">Dark Mode</div>
+              <div class="pref-desc">Use dark theme (currently active)</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="darkMode" checked disabled />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="card profile-section danger-zone full-width">
+          <h3 class="section-title">Danger Zone</h3>
+          <div class="danger-actions">
+            <button class="btn ghost" onclick="confirmLogout()">Log Out</button>
+            <button class="btn ghost danger" onclick="confirmDeleteAccount()">Delete Account</button>
+          </div>
         </div>
       </div>
     </section>
