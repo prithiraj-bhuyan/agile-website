@@ -1,0 +1,36 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Brand Color: #7C3AED or #8B5CF6 based on image. The image is lighter purple. Let's use #8B5CF6 (Violet-500) -->
+  
+  <!-- Arched Text "DETECT" -->
+  <!-- Adjusted curve to be tighter to match image -->
+  <path id="curve" d="M120,160 A180,180 0 0,1 392,160" fill="none"/>
+  <text width="512" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="80" fill="#8B5CF6" style="letter-spacing: 4px;">
+    <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">DETECT</textPath>
+  </text>
+  
+  <!-- Magnifying Glass Handle -->
+  <!-- Short, thick handle at bottom right -->
+  <path d="M340,340 L440,440" stroke="#8B5CF6" stroke-width="60" stroke-linecap="round"/>
+  
+  <!-- Magnifying Glass Circle -->
+  <!-- Thick stroke -->
+  <circle cx="256" cy="256" r="130" stroke="#8B5CF6" stroke-width="25" fill="none"/>
+  
+  <!-- "Eye" Shape / Curved A Container -->
+  <!-- Upper Lid -->
+  <path d="M146,256 C146,256 196,156 256,156 C316,156 366,256 366,256" stroke="#8B5CF6" stroke-width="15" fill="none" stroke-linecap="round" />
+  
+  <!-- Lower Lid -->
+  <path d="M146,256 C146,256 196,356 256,356 C316,356 366,256 366,256" stroke="#8B5CF6" stroke-width="15" fill="none" stroke-linecap="round" />
+  
+  <!-- The "A" Shape -->
+  <!-- Constructed with lines/paths to integrate with the eye shape -->
+  <g stroke="#8B5CF6" stroke-width="25" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left Leg -->
+    <path d="M256,170 L195,330" />
+    <!-- Right Leg -->
+    <path d="M256,170 L317,330" />
+    <!-- Crossbar (Curved downwards) -->
+    <path d="M215,270 Q256,290 297,270" />
+  </g>
+</svg>

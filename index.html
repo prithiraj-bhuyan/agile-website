@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fact Hub | Fake News Detection</title>
+  <title>Fact Hub | Advanced AI Detection</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <header class="nav">
     <div class="brand" onclick="showPage('landing')" style="cursor:pointer">
-      <div class="logo">FH</div>
+      <img src="assets/logo.svg" alt="Detect AI Logo" class="logo-img">
       <div>
         <div class="brand-name">Fact Hub</div>
-        <div class="brand-tag">Fake news detection app + extension</div>
+        <div class="brand-tag">AI content detection & analysis</div>
       </div>
     </div>
 
@@ -30,97 +32,214 @@
     </div>
   </header>
 
-  <main id="landing-page" class="container">
+  <main id="landing-page">
     <section class="hero">
-      <div class="hero-left">
-        <h1>Stop fake news before it spreads.</h1>
-        <p class="sub">
-          Fact Hub helps you detect AI-generated content and verify claims in webpages, apps, and social feeds—fast. Use our browser extension or mobile app to analyze text, images, videos, and documents for credibility and citations.
-        </p>
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1>Ready. Set. <span>Detected.</span></h1>
+          <p class="sub">
+            Fact Hub provides the most accurate AI detection across all media formats. Instantly analyze text, images,
+            videos, and documents with enterprise-grade precision.
+          </p>
 
-        <div class="hero-actions">
-          <button class="btn primary" onclick="showLogin('signup')">Get started</button>
-          <button class="btn" onclick="scrollToSection('how')">See how it works</button>
-        </div>
-
-        <div class="trust">
-          <div class="pill">⚡ Real-time checks</div>
-          <div class="pill">🔍 Evidence-based summaries</div>
-          <div class="pill">🧩 Chrome extension</div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="product-card">
-          <div class="pc-top">
-            <div class="pc-dot"></div><div class="pc-dot"></div><div class="pc-dot"></div>
-            <span class="pc-title">Fact Hub Extension</span>
+          <div class="hero-actions">
+            <a href="https://deployment-fake-news-detector.vercel.app/" target="_blank" class="btn primary">Start
+              Detecting</a>
+            <button class="btn ghost" onclick="scrollToSection('features')">View Features</button>
           </div>
-          <div class="pc-body">
-            <div class="scan-row">
-              <div class="scan-label">Scanning page...</div>
-              <div class="scan-status ok">Verified</div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="product-interface">
+            <div class="pi-header">
+              <div class="pi-title">
+                <span style="font-size:32px">🔍</span> AI Content Detector
+              </div>
+              <div class="pi-subtitle">Analyze Text, Images, Videos, and Files for AI Generation</div>
             </div>
-            <div class="meter">
-              <div class="bar" style="width: 78%"></div>
+
+            <div class="pi-tabs">
+              <div class="pi-tab active">📝 Text</div>
+              <div class="pi-tab">🖼️ Image URL</div>
+              <div class="pi-tab">🎥 Video URL</div>
+              <div class="pi-tab">📂 File Upload</div>
             </div>
-            <div class="pc-small">Confidence score: <b>78%</b></div>
-            <div class="evidence">
-              <div class="ev-title">Top evidence</div>
-              <div class="ev-item">• Source cross-check from reputable outlets</div>
-              <div class="ev-item">• Claim consistency in known fact databases</div>
-              <div class="ev-item">• Highlighted mismatched context</div>
+
+            <div class="pi-input-container">
+              <textarea class="pi-textarea" placeholder="Paste text here to analyze..."></textarea>
             </div>
-            <div class="pc-cta">
-              <button class="btn small" onclick="showLogin('signup')">Install extension</button>
-              <button class="btn small ghost" onclick="showLogin('signup')">Download app</button>
-            </div>
+
+            <button class="pi-btn">Analyze Content</button>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section">
-      <h2>Key features</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Search & verify</h3>
-          <p>Paste a link or highlight text to verify claims and get an evidence summary.</p>
-        </div>
-        <div class="card">
-          <h3>Browser extension</h3>
-          <p>Detect misinformation directly on the page while you browse.</p>
-        </div>
-        <div class="card">
-          <h3>Mobile app</h3>
-          <p>Fact-check content shared in chats and social apps on the go.</p>
+    <!-- Supported Formats (Colored Background) -->
+    <section id="features" class="section bg-alt">
+      <div class="container">
+        <h2>Comprehensive AI Detection</h2>
+        <p class="section-sub">One platform for all your content verification user needs.</p>
+
+        <div class="grid" style="margin-bottom: 40px;">
+          <div class="card">
+            <div class="icon-large">📄</div>
+            <h3>Text Analysis</h3>
+            <p>Detect AI in essays, articles, and emails. Paste text or upload files.</p>
+          </div>
+          <div class="card">
+            <div class="icon-large">🖼️</div>
+            <h3>Image Detection</h3>
+            <p>Identify deepfakes and AI-generated art (Midjourney, DALL-E, Stable Diffusion).</p>
+          </div>
+          <div class="card">
+            <div class="icon-large">🎥</div>
+            <h3>Video Analysis</h3>
+            <p>Frame-by-frame analysis to detect AI manipulation in video content.</p>
+          </div>
+          <div class="card">
+            <div class="icon-large">📂</div>
+            <h3>Document Scanning</h3>
+            <p>Upload PDFs or Word docs for full-document AI scanning and reporting.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="how" class="section">
-      <h2>How it works</h2>
-      <ol class="steps">
-        <li><b>Capture content</b> (link, highlight, or screenshot).</li>
-        <li><b>Analyze</b> with credibility + consistency checks.</li>
-        <li><b>Explain</b> results with citations and context.</li>
-      </ol>
+    <!-- Detailed Analysis (White Background) -->
+    <section class="section">
+      <div class="container">
+        <h2>Detailed Analysis Capabilities</h2>
+        <div class="grid">
+          <div class="card feature-highlight">
+            <h3>✅ Detailed Verdict</h3>
+            <p>Get a clear, binary "Human" or "AI" classification along with a nuance score.</p>
+          </div>
+          <div class="card feature-highlight">
+            <h3>🧠 Decision Explanation</h3>
+            <p>We don't just give a score. We explain <em>why</em> content was flagged, citing linguistic patterns.</p>
+          </div>
+          <div class="card feature-highlight">
+            <h3>📊 AI Probability</h3>
+            <p>See the exact percentage likelihood of AI generation for granular assessment.</p>
+          </div>
+          <div class="card feature-highlight">
+            <h3>🖍️ Key Text Highlight</h3>
+            <p>Visual highlighting of specific sentences and phrases that triggered the AI detection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section bg-alt">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="steps-grid">
+          <!-- Step 1: Input -->
+          <div class="step-card">
+            <div class="step-visual">
+              <div class="mini-ui">
+                <div class="product-interface">
+                  <div class="pi-header">
+                    <div class="pi-title"><span style="font-size:24px">🔍</span> AI Detector</div>
+                  </div>
+                  <div class="pi-tabs">
+                    <div class="pi-tab active">📝 Text</div>
+                    <div class="pi-tab">🖼️</div>
+                    <div class="pi-tab">🎥</div>
+                    <div class="pi-tab">📂</div>
+                  </div>
+                  <div class="pi-input-container">
+                    <textarea class="pi-textarea" placeholder="Paste text here..."></textarea>
+                  </div>
+                  <button class="pi-btn">Analyze Content</button>
+                </div>
+              </div>
+            </div>
+            <h3>1. Upload or Paste</h3>
+            <p class="small" style="color:var(--text-soft)">Paste your text or upload a file to begin the scan.</p>
+          </div>
+
+          <!-- Step 2: Processing -->
+          <div class="step-card">
+            <div class="step-visual">
+              <div class="mini-ui">
+                <div class="product-interface">
+                  <div class="pi-header">
+                    <div class="pi-title"><span style="font-size:24px">🔍</span> AI Detector</div>
+                  </div>
+                  <div class="pi-tabs">
+                    <div class="pi-tab active">📝 Text</div>
+                    <div class="pi-tab">🖼️</div>
+                    <div class="pi-tab">🎥</div>
+                    <div class="pi-tab">📂</div>
+                  </div>
+                  <div class="pi-input-container">
+                    <div class="pi-textarea" style="color:rgba(255,255,255,0.5)">
+                      Discover how AI is changing the way DevOps teams monitor...
+                    </div>
+                  </div>
+                  <button class="pi-btn scanning">🔍 Searching...</button>
+                </div>
+              </div>
+            </div>
+            <h3>2. AI Analysis</h3>
+            <p class="small" style="color:var(--text-soft)">Multi-model algorithms analyze syntax & metadata.</p>
+          </div>
+
+          <!-- Step 3: Result -->
+          <div class="step-card">
+            <div class="step-visual">
+              <div class="mini-ui">
+                <div class="product-interface" style="padding-bottom:10px;"> <!-- Less padding for chart fit -->
+                  <div class="pi-header" style="margin-bottom:10px;">
+                    <div class="pi-title"><span style="font-size:24px">🔍</span> AI Detector</div>
+                  </div>
+
+                  <div class="pi-input-container" style="padding:10px; margin-bottom:10px;">
+                    <div class="pi-textarea" style="height:40px; overflow:hidden; color:rgba(255,255,255,0.5)">
+                      Discover how AI is changing the way DevOps...
+                    </div>
+                  </div>
+
+                  <div class="result-verdict">
+                    <b>Verdict:</b> <span>Likely AI-generated</span>
+                  </div>
+
+                  <div class="result-circle-container">
+                    <div class="result-circle">
+                      <div class="rc-content">
+                        <div class="rc-percent">80%</div>
+                        <div class="rc-label">AI PROBABILITY</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3>3. Review Results</h3>
+            <p class="small" style="color:var(--text-soft)">Get a clear verdict with detailed probability scores.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="reviews" class="section">
-      <h2>Reviews</h2>
-      <div class="grid">
-        <div class="card">
-          <p>“Helped me quickly verify viral claims during elections.”</p>
-          <div class="small">★★★★★</div>
-        </div>
-        <div class="card">
-          <p>“The citations are the best part — you can actually see evidence.”</p>
-          <div class="small">★★★★★</div>
-        </div>
-        <div class="card">
-          <p>“Love that it works as an extension. Super fast.”</p>
-          <div class="small">★★★★☆</div>
+      <div class="container">
+        <h2>Trusted by Professionals</h2>
+        <div class="grid">
+          <div class="card">
+            <p>“The image detection saved us from publishing a deepfake. Incredibly accurate.”</p>
+            <div class="small">★★★★★</div>
+          </div>
+          <div class="card">
+            <p>“I use the document scanner for checking student submissions. The highlighting is a lifesaver.”</p>
+            <div class="small">★★★★★</div>
+          </div>
+          <div class="card">
+            <p>“Fastest processing I've seen for video analysis. Essential tool.”</p>
+            <div class="small">★★★★☆</div>
+          </div>
         </div>
       </div>
     </section>
@@ -130,16 +249,16 @@
     <section class="section">
       <div class="pricing-header">
         <h1>Choose your plan</h1>
-        <p class="sub">Upgrade to unlock advanced verification tools. Only one active plan allowed.</p>
+        <p class="sub">Upgrade for higher limits and advanced media support. Only one active plan allowed.</p>
       </div>
-      
+
       <div class="grid">
         <div class="card price-card" id="plan-free">
           <div class="pc-title">Free</div>
           <div class="price">$0<span>/mo</span></div>
           <ul class="price-list">
-            <li>50 Verifications/mo</li>
-            <li>Chrome Extension</li>
+            <li>50 Text Checks/mo</li>
+            <li>Basic AI Probability</li>
           </ul>
           <div class="plan-action"></div>
         </div>
@@ -148,9 +267,9 @@
           <div class="pc-title">Pro</div>
           <div class="price">$9<span>/mo</span></div>
           <ul class="price-list">
-            <li>Unlimited Verifications</li>
-            <li>Mobile App Access</li>
-            <li>Deep Source Citations</li>
+            <li>Unlimited Text Checks</li>
+            <li>Image & Document Support</li>
+            <li>Detailed Explanations</li>
           </ul>
           <div class="plan-action"></div>
         </div>
@@ -159,8 +278,8 @@
           <div class="pc-title">Team</div>
           <div class="price">$29<span>/mo</span></div>
           <ul class="price-list">
-            <li>5 User Licenses</li>
-            <li>Shared Fact Logs</li>
+            <li>Video Analysis Support</li>
+            <li>API Access</li>
             <li>Priority Support</li>
           </ul>
           <div class="plan-action"></div>
@@ -170,40 +289,39 @@
   </main>
 
   <main id="product-page" class="container hidden">
-    <section class="section">
-      <div class="product-showcase">
-        <h1>Our Product</h1>
-        <p class="sub">Experience our advanced fake news detection technology in action. Try our live demo and see how it works.</p>
-        
-        <div class="product-demo-card">
-          <h2>Fake News Detector</h2>
-          <p>Our state-of-the-art AI-powered system helps you identify and verify the authenticity of news articles and content across the web.</p>
-          
-          <div class="product-features-list">
-            <div class="feature-item">
-              <span class="feature-icon">🤖</span>
-              <span>AI-Powered Analysis</span>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">⚡</span>
-              <span>Real-Time Detection</span>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">🎯</span>
-              <span>High Accuracy</span>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">🔒</span>
-              <span>Secure & Private</span>
-            </div>
+    <section class="product-hero">
+      <h1>Enterprise-Grade<br>AI Detection at Your Fingertips</h1>
+      <p class="section-sub">Trusted by educators, publishers, and professionals worldwide.</p>
+
+
+
+      <div class="launch-section">
+        <h2>Start Your Analysis</h2>
+        <p style="color:var(--text-soft); margin-bottom:40px;">Follow these steps to ensure accurate results.</p>
+
+        <div class="instruction-grid">
+          <div class="instruction-step">
+            <div class="step-number">1</div>
+            <h3>Launch Dashboard</h3>
+            <p>Click the button below to open the dedicated analysis workspace in a new tab.</p>
           </div>
-          
-          <div class="product-cta">
-            <a href="https://deployment-fake-news-detector.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <button class="btn primary large">Try Live Demo →</button>
-            </a>
-            <p class="demo-note">No installation required • Opens in new tab</p>
+          <div class="instruction-step">
+            <div class="step-number">2</div>
+            <h3>Upload Content</h3>
+            <p>Paste text or upload files. We support PDF, DOCX, JPG, and MP4.</p>
           </div>
+          <div class="instruction-step">
+            <div class="step-number">3</div>
+            <h3>View Detailed Report</h3>
+            <p>Get line-by-line analysis and a downloadable certification of authenticity.</p>
+          </div>
+        </div>
+
+        <div class="launch-card">
+          <h3 style="margin-bottom:16px;">Ready to begin?</h3>
+          <p style="margin-bottom:24px; color:var(--text-soft)">Access the full suite of tools immediately.</p>
+          <a href="https://deployment-fake-news-detector.vercel.app/" target="_blank" class="btn primary large"
+            style="width:100%; justify-content:center;">Launch Workspace ↗</a>
         </div>
       </div>
     </section>
@@ -216,98 +334,104 @@
         <p class="sub">Manage your account settings and preferences</p>
       </div>
 
-      <div class="profile-grid">
-        <!-- Profile Info Card -->
-        <div class="card profile-info-card">
-          <div class="profile-avatar-large" id="profileAvatarLarge">
-            <span id="profileInitials">U</span>
+      <div class="profile-layout-grid">
+        <!-- Sidebar: User Info & Stats -->
+        <aside class="profile-sidebar">
+          <div class="profile-card profile-header-center">
+            <div class="profile-avatar-large" id="profileAvatarLarge">
+              <span id="profileInitials">U</span>
+            </div>
+            <div class="profile-name" id="profileDisplayName">User</div>
+            <div class="profile-email" id="profileEmail">user@example.com</div>
+            <div class="plan-tag" id="profilePlanBadge" style="display:inline-block">FREE PLAN</div>
           </div>
-          <h3 id="profileDisplayName">User</h3>
-          <p class="profile-email" id="profileEmail">user@example.com</p>
-          <div class="profile-plan-badge" id="profilePlanBadge">FREE PLAN</div>
-        </div>
 
-        <!-- Account Details -->
-        <div class="card profile-section">
-          <h3 class="section-title">Account Information</h3>
-          <form id="profileForm" onsubmit="updateProfile(event)">
-            <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" id="fullName" placeholder="Enter your full name" required />
+          <div class="profile-card" style="margin-top: 24px;">
+            <div class="profile-stat-row">
+              <span class="stat-label">Member Since</span>
+              <span class="stat-value" id="memberSince">Feb 2026</span>
             </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" id="emailInput" placeholder="you@example.com" required />
+            <div class="profile-stat-row">
+              <span class="stat-label">Verifications</span>
+              <span class="stat-value" id="verificationsUsed">12 / 50</span>
             </div>
-            <div class="form-group">
-              <label>Bio (Optional)</label>
-              <textarea id="bio" rows="3" placeholder="Tell us about yourself..."></textarea>
+            <div class="profile-stat-row">
+              <span class="stat-label">Plan Status</span>
+              <span class="stat-value" id="currentPlanDisplay" style="color:var(--ok)">Active</span>
             </div>
-            <button type="submit" class="btn primary full">Save Changes</button>
-          </form>
-        </div>
+            <button class="btn primary small full" style="margin-top:16px" onclick="showPage('subscriptions')">Upgrade
+              Plan</button>
+          </div>
+        </aside>
 
-        <!-- Subscription Details -->
-        <div class="card profile-section">
-          <h3 class="section-title">Subscription</h3>
-          <div class="subscription-info">
-            <div class="sub-detail">
-              <span class="sub-label">Current Plan</span>
-              <span class="sub-value" id="currentPlanDisplay">Free</span>
+        <!-- Main Content: Forms & Settings -->
+        <div class="profile-content">
+          <!-- Account Details -->
+          <div class="profile-card">
+            <div class="section-header">
+              <h3>Account Information</h3>
             </div>
-            <div class="sub-detail">
-              <span class="sub-label">Verifications Used</span>
-              <span class="sub-value" id="verificationsUsed">12 / 50</span>
-            </div>
-            <div class="sub-detail">
-              <span class="sub-label">Member Since</span>
-              <span class="sub-value" id="memberSince">February 2026</span>
-            </div>
+            <form id="profileForm" onsubmit="updateProfile(event)">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="emailInput" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label>Bio (Optional)</label>
+                <textarea id="bio" rows="3" class="pi-textarea"
+                  style="color:var(--text); border:1px solid var(--border); background: var(--bg-soft); padding:12px; border-radius:12px; height:auto;"
+                  placeholder="Tell us about yourself..."></textarea>
+              </div>
+              <div style="text-align:right; margin-top:16px;">
+                <button type="submit" class="btn primary">Save Changes</button>
+              </div>
+            </form>
           </div>
-          <button class="btn primary full" onclick="showPage('subscriptions')">Manage Subscription</button>
-        </div>
 
-        <!-- Preferences -->
-        <div class="card profile-section">
-          <h3 class="section-title">Preferences</h3>
-          <div class="preference-item">
-            <div>
-              <div class="pref-label">Email Notifications</div>
-              <div class="pref-desc">Receive updates about your verifications</div>
+          <!-- Preferences -->
+          <div class="profile-card">
+            <div class="section-header">
+              <h3>Preferences</h3>
             </div>
-            <label class="toggle">
-              <input type="checkbox" id="emailNotifications" checked />
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-          <div class="preference-item">
-            <div>
-              <div class="pref-label">Browser Extension Auto-Check</div>
-              <div class="pref-desc">Automatically verify pages as you browse</div>
+            <div class="preference-item">
+              <div>
+                <div class="pref-label">Email Notifications</div>
+                <div class="pref-desc">Receive updates about your verifications</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="emailNotifications" checked />
+                <span class="toggle-slider"></span>
+              </label>
             </div>
-            <label class="toggle">
-              <input type="checkbox" id="autoCheck" checked />
-              <span class="toggle-slider"></span>
-            </label>
-          </div>
-          <div class="preference-item">
-            <div>
-              <div class="pref-label">Dark Mode</div>
-              <div class="pref-desc">Use dark theme (currently active)</div>
+            <div class="preference-item">
+              <div>
+                <div class="pref-label">Browser Extension Auto-Check</div>
+                <div class="pref-desc">Automatically verify pages as you browse</div>
+              </div>
+              <label class="toggle">
+                <input type="checkbox" id="autoCheck" checked />
+                <span class="toggle-slider"></span>
+              </label>
             </div>
-            <label class="toggle">
-              <input type="checkbox" id="darkMode" checked disabled />
-              <span class="toggle-slider"></span>
-            </label>
           </div>
-        </div>
 
-        <!-- Danger Zone -->
-        <div class="card profile-section danger-zone full-width">
-          <h3 class="section-title">Danger Zone</h3>
-          <div class="danger-actions">
-            <button class="btn ghost" onclick="confirmLogout()">Log Out</button>
-            <button class="btn ghost danger" onclick="confirmDeleteAccount()">Delete Account</button>
+          <!-- Danger Zone -->
+          <div class="profile-card danger-zone">
+            <div class="section-header">
+              <h3>Danger Zone</h3>
+            </div>
+            <p class="small" style="margin-bottom:16px; color:#7f1d1d;">
+              Once you delete your account, there is no going back. Please be certain.
+            </p>
+            <div class="danger-actions">
+              <button class="btn ghost" onclick="confirmLogout()">Log Out</button>
+              <button class="btn ghost danger" style="background:white; border:1px solid #fecaca;"
+                onclick="confirmDeleteAccount()">Delete Account</button>
+            </div>
           </div>
         </div>
       </div>
@@ -317,8 +441,6 @@
   <footer class="footer">
     <div>©️ 2026 Fact Hub</div>
     <div class="footer-links">
-      <a href="#" onclick="showLogin('login'); return false;">Log in</a>
-      <a href="#" onclick="showLogin('signup'); return false;">Sign up</a>
       <a href="#">Contact</a>
     </div>
   </footer>
@@ -398,4 +520,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
